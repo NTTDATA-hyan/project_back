@@ -1,15 +1,14 @@
-import { Body, Controller, Get } from '@nestjs/common';
-import { AppService } from './app.service';
-import { IMovie } from './interfaces/list-movie';
-import movie_api from './movie_api/movie_api';
+import { Body, Controller, Get } from "@nestjs/common";
+import { MovieApi } from "./app.service";
+import { IMovie } from "./interfaces/list-movie";
 
 @Controller()
 export class AppController {
-  constructor(private readonly appService: AppService) {}
+  constructor(private readonly appService: MovieApi) {}
 
-  @Get('movies')
-  async getMovie(@Body() { title }: IMovie): Promise<any> {
-    const movie = await movie_api({ title });
+  @Get("movies")
+  async getMovie(@Body() { title }: IMovie): Promise<object> {
+    const movie = await this.appService.getMovie({ title });
     return movie;
   }
 }
