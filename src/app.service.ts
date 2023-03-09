@@ -6,7 +6,6 @@ import { IMovie } from "./interfaces/list-movie";
 export class MovieApi {
   async getMovie({ title }: IMovie): Promise<object> {
     let result = {};
-
     await axios
       .get(`https://www.omdbapi.com/?i=tt3896198&apikey=8510023c&t=${title}`)
       .then((res) => {
