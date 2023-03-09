@@ -39,6 +39,13 @@ Inicie sua aplicação
   POST - http://127.0.0.1:3000/movie  (listar seu filme)
 ```
 
+## Rodando os testes
+
+```bash
+  yarn test
+```
+
+
 ## Techs usadas
 
 **Back-end:** NodeJS, Express, NestJS
